@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE order SYSTEM 'bonanza.dtd'>
+
+<order type="eatin">
+    <customer>Marc</customer>
+    <burger>
+        <patty type="beef"/>
+        <cheeses top="swiss" bottom="swiss"/>
+        <topping type="shrooms"/>
+        <topping type="lettuce"/>
+        <topping type="bacon"/>
+        <sauce type="mayo"/>
+        <sauce type="ketchup"/>
+        <instructions>Extra crispy bacon</instructions>
+    </burger>
+    <burger>
+        <patty type="beef"/>
+        <cheeses top="gouda" bottom="gouda"/>
+        <topping type="shrooms"/>
+        <topping type="lettuce"/>
+        <topping type="bacon"/>
+        <sauce type="mayo"/>
+        <sauce type="ketchup"/>
+        <instructions>Extra mayo and peanut butter</instructions>
+    </burger>
+    <special>Bring order in a red tray</special>
+</order>
