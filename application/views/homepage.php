@@ -2,7 +2,7 @@
 
 {orders}
 <div>
-    <a href="welcome/order/{filenumber}">order{filenumber}</a>
+    <a href="welcome/order/{file}">{order}</a>
 </div>
 {/orders}
 

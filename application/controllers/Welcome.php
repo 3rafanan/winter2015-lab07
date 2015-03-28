@@ -27,13 +27,15 @@ class Welcome extends Application {
 
         // filter out orders
         $orders = array();
-        preg_match_all('/(?<=order).*(?=\.xml*)/', implode("\n", $files), $orders);
+        //preg_match_all('/(?<=order).*(?=\.xml*)/', implode("\n", $files), $orders);
+        preg_match_all('/order.*\.xml/', implode("\n", $files), $orders);
 
         $orderlinks = array();
         foreach($orders[0] as $order)
         {
             $orderlink = array(
-                'filenumber'   => $order,
+                'file'   => $order,
+                'order'  => preg_split("/\./", $order)[0],
             );
             $orderlinks[] = $orderlink;
         }
