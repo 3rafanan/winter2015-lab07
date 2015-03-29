@@ -13,6 +13,8 @@ class Welcome extends Application {
     {
         parent::__construct();
         $this->load->helper('directory');
+        $this->load->model('order');
+        $this->load->model('menu');
     }
 
     //-------------------------------------------------------------
@@ -27,7 +29,9 @@ class Welcome extends Application {
 
         // filter out orders
         $orders = array();
+        //Extract number from order<num>.xml files
         //preg_match_all('/(?<=order).*(?=\.xml*)/', implode("\n", $files), $orders);
+
         preg_match_all('/order.*\.xml/', implode("\n", $files), $orders);
 
         $orderlinks = array();
@@ -53,11 +57,22 @@ class Welcome extends Application {
 
     function order($filename)
     {
-	// Build a receipt for the chosen order
+        // Build a receipt for the chosen order
 
-	// Present the list to choose from
-	$this->data['pagebody'] = 'justone';
-	$this->render();
+        $order = new Order($filename);
+
+    	// Build a receipt for the chosen order
+        $this->data['order'] = preg_split("/\./", $filename)[0];
+        $this->data['customer'] = $order->customer;
+        $this->data['type'] = $order->type;
+        $this->data['burgers'] = $order->burgers;
+        $this->data['total'] = $order->total;
+        $this->data['special'] = $order->orderInstructions;
+
+        //var_dump($order);
+        // Present the list to choose from
+        $this->data['pagebody'] = 'justone';
+        $this->render();
     }
 
 

@@ -1,4 +1,4 @@
-<h4>Barker Bob's Burger Bar - Orders</h4>
+<h5>Barker Bob's Burger Bar - Orders</h5>
 
 {orders}
 <div>
@@ -6,4 +6,4 @@
 </div>
 {/orders}
 
-<h4>Select an order from the list above to see its receipt.</h4>
+<h5>Select an order from the list above to see its receipt.</h5>
